@@ -222,6 +222,29 @@ located in San Jose.
 | 1005 | 0.26 | London |
 +------+------+--------+
 
+16.Find all customers with orders on October 3
+->  select c.cnum, c.cname, o.odate from customers c join orders o on c.cnum = o.cnum where o.odate = "1996-10-03";
++------+----------+------------+
+| cnum | cname    | odate      |
++------+----------+------------+
+| 2008 | Cisneros | 1996-10-03 |
+| 2007 | Pereira  | 1996-10-03 |
+| 2001 | Hoffman  | 1996-10-03 |
+| 2003 | Liu      | 1996-10-03 |
+| 2008 | Cisneros | 1996-10-03 |
++------+----------+------------+
+
+17. Give the sums of the amounts from the Orders table, grouped by date, eliminating all those
+dates where the SUM was not at least 2000.00 above the MAX amount.
+
+-> select odate, sum(amt) AS total_sum , max(amt) AS max_amount from orders group by odate having sum(amt) >= max(amt) + 2000;
++------------+-----------+------------+
+| odate      | total_sum | max_amount |
++------------+-----------+------------+
+| 1996-10-03 |   8944.59 |    5160.45 |
++------------+-----------+------------+
+
+
 
 
 
