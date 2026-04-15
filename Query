@@ -244,6 +244,15 @@ dates where the SUM was not at least 2000.00 above the MAX amount.
 | 1996-10-03 |   8944.59 |    5160.45 |
 +------------+-----------+------------+
 
+18.Select all customers with a rating above 200.
+->  select * from customers where rating > 200;
++------+----------+----------+--------+------+
+| CNUM | CNAME    | CITY     | RATING | SNUM |
++------+----------+----------+--------+------+
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
++------+----------+----------+--------+------+
+
 
 
 
