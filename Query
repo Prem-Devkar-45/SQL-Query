@@ -376,6 +376,85 @@ commission above 0.10.
 |    100 |
 +--------+
 
+31. Give the salespeople’s commissions as percentages instead of decimal numbers.
+ -> select sname , comm * 100 as Per_Comm from salespeople;
++---------+----------+
+| sname   | Per_Comm |
++---------+----------+
+| Peel    |    12.00 |
+| Serres  |    13.00 |
+| AxelRod |    10.00 |
+| Motika  |    11.00 |
+| Fran    |    26.00 |
+| Rifkin  |    15.00 |
++---------+----------+
+
+32.Count the number of salespeople currently listing orders in the Orders table
+-> mysql> select count( distinct SNUM) from orders;
++-----------------------+
+| count( distinct SNUM) |
++-----------------------+
+|                     5 |
++-----------------------+
+
+33.Write a select command that produces the rating followed by the name of each customer in
+San Jose.
+-> select rating , cname from customers where city = "san Jose";
++--------+----------+
+| rating | cname    |
++--------+----------+
+|    200 | Liu      |
+|    300 | Cisneros |
++--------+----------+
+
+34. Find the SUM of all purchases from the Orders table
+-> select sum(amt) from orders;
++----------+
+| sum(amt) |
++----------+
+| 26658.40 |
++----------+
+
+35. Count the number of nonNULL rating fields in the Customers table (including repeats).
+->select count(rating) AS NotNUll from customers ;
++---------+
+| NotNUll |
++---------+
+|       7 |
++---------+
+
+36. Write a query that will produce the SNUM values of all salespeople with orders currently in the
+Orders table (without any repeats).
+-> select distinct snum from orders;
++------+
+| snum |
++------+
+| 1001 |
+| 1002 |
+| 1003 |
+| 1004 |
+| 1007 |
++------+
+
+37.Find the average commission for salespeople in London.
+-> select avg(comm) from salespeople where city = "london";
++-----------+
+| avg(comm) |
++-----------+
+|  0.163333 |
++-----------+
+
+38.Find the average amount from the Orders table.
+->select avg(amt) AS Avarage from orders;
++-------------+
+| Avarage     |
++-------------+
+| 2665.840000 |
++-------------+
+
+39.
+
+
 
 
 
